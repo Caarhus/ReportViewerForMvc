@@ -28,11 +28,13 @@ namespace ReportViewerForMvc.Example.Controllers
         /// <returns></returns>
         public ActionResult ServerReportExample()
         {
-            ReportViewer reportViewer = new ReportViewer();
-            reportViewer.ProcessingMode = ProcessingMode.Remote;
-            reportViewer.SizeToReportContent = true;
-            reportViewer.Width = Unit.Percentage(100);
-            reportViewer.Height = Unit.Percentage(100);
+            ReportViewer reportViewer = new ReportViewer
+            {
+                ProcessingMode = ProcessingMode.Remote,
+                SizeToReportContent = true,
+                Width = Unit.Percentage(100),
+                Height = Unit.Percentage(100)
+            };
 
             reportViewer.ServerReport.ReportPath = "/AdventureWorks 2012/Sales_by_Region";
             reportViewer.ServerReport.ReportServerUrl = new Uri("http://localhost/ReportServer/");
@@ -56,11 +58,13 @@ namespace ReportViewerForMvc.Example.Controllers
 
         private void SetLocalReport()
         {
-            ReportViewer reportViewer = new ReportViewer();
-            reportViewer.ProcessingMode = ProcessingMode.Local;
-            reportViewer.SizeToReportContent = true;
-            reportViewer.Width = Unit.Percentage(100);
-            reportViewer.Height = Unit.Percentage(100);
+            ReportViewer reportViewer = new ReportViewer
+            {
+                ProcessingMode = ProcessingMode.Local,
+                SizeToReportContent = true,
+                Width = Unit.Percentage(100),
+                Height = Unit.Percentage(100)
+            };
 
             FillDataSet();
             reportViewer.LocalReport.ReportPath = Request.MapPath(Request.ApplicationPath) + @"Reports\LocalReportExample.rdlc";
