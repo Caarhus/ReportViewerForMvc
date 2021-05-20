@@ -86,7 +86,7 @@ namespace ReportViewerForMvc.Example.Controllers
 
         private string GetConnectionString()
         {
-            return "Data Source=localhost;Initial Catalog=AdventureWorks2012;Integrated Security=True";
+            return "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=AdventureWorks2012;Integrated Security=True;Connect Timeout=30";
         }
 
         private string GetQueryString()
